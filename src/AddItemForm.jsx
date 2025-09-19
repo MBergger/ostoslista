@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ShoppingContext } from "./ShoppingContext";
 
-const AddItemForm = ({ onAddItem }) => {
+const AddItemForm = () => {
   const [inputValue, setInputValue] = useState("");
+  const { addItem } = useContext(ShoppingContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (inputValue.trim() === "") return;
-    onAddItem(inputValue);
+    addItem(inputValue);
     setInputValue("");
   };
 

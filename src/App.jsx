@@ -1,13 +1,16 @@
 import "/public/style.css";
 import Header from "./Header";
 import ShoppingList from "./ShoppingList";
+import { ShoppingProvider } from "./ShoppingContext";
 
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <ShoppingList />
-    </div>
+    <ShoppingProvider>
+      <div className="container">
+        <Header />
+        <ShoppingList />
+      </div>
+    </ShoppingProvider>
   );
 }
 
